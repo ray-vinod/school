@@ -1,0 +1,55 @@
+﻿@model IEnumerable<School.Models.Grade>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GradeName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.GradeName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GradeId">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.GradeId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+@*<button type="button" id="Popup" bs-toggle-modal="myModal">Modal Pop-up</button>
+<modal id="myModal" title="Modal Title">
+    <modal-body>
+        <h4>Something happened</h4>
+        <p>Something happened</p>
+    </modal-body>
+</modal>*@
+@*<button type ="button" id="Popup">Modal PopUp</button>
+<bs-modal id-name="modal" modal-heading="mymodal"></bs-modal>
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<script>
+    $(document).ready(function () { 
+        alert("button clicked");
+        $("#Popup").click(function () { 
+            alert("button clicked");
+            
+        });
+    });
+</script>*@
